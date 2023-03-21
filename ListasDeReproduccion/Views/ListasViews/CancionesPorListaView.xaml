@@ -14,7 +14,7 @@
                 <ColumnDefinition Width=".2*"></ColumnDefinition>
 
             </Grid.ColumnDefinitions>
-            <TextBlock Background="Aqua"  FontSize="30" FontWeight="Bold" Text="{Binding Nombre}"></TextBlock>
+            <TextBlock Background="Aqua"  FontSize="30" FontWeight="Bold" Text="{Binding Lista.Nombre}"></TextBlock>
             <Button Grid.Column="1" Command="{Binding RegresarCommand}" Background="Aqua">
                 <fa:ImageAwesome Icon="Solid_Backward" ></fa:ImageAwesome>
             </Button>

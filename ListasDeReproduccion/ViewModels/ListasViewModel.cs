@@ -50,6 +50,7 @@ namespace ProyectoListasdeReproduccion.ViewModels
         {
             var a = catalogo.GetLista(id);
             Operacion = Accion.VerCancionesDeLista;
+            Lista = a;
             ListaCancionesPorLista.Clear();
             foreach (var item in catalogocancion.GetCancionesXLista(a))
             {
