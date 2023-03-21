@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="ProyectoListasdeReproduccion.Views.ListasIndexView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ProyectoListasdeReproduccion.Views"
+             xmlns:vi="clr-namespace:ProyectoListasdeReproduccion.Views.ListasViews"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <vi:AgregarListaView x:Key="AgregarLista"></vi:AgregarListaView>
+        <vi:EliminarListaView x:Key="Eliminarlista"></vi:EliminarListaView>
+        <vi:ListasView x:Key="ListaView"></vi:ListasView>
+        <vi:CancionesPorListaView x:Key="PorLista"></vi:CancionesPorListaView>
+    </UserControl.Resources>
+    <Grid>
+        <ContentControl>
+            <ContentControl.Style>
+                <Style TargetType="ContentControl">
+                    <Setter Property="Content" Value="{StaticResource ListaView}"></Setter>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Operacion}" Value="{x:Static local:Accion.AgregarListas}">
+                            <Setter Property="Content" Value="{StaticResource AgregarLista}"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Operacion}" Value="{x:Static local:Accion.EliminarListas}">
+                            <Setter Property="Content" Value="{StaticResource Eliminarlista}"></Setter>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Operacion}" Value="{x:Static local:Accion.VerListas}">
+                            <Setter Property="Content" Value="{StaticResource ListaView}"></Setter>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Operacion}" Value="{x:Static local:Accion.VerCancionesDeLista}">
+                            <Setter Property="Content" Value="{StaticResource PorLista }"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ContentControl.Style>
+        </ContentControl>
+    </Grid>
+</UserControl>

@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="ProyectoListasdeReproduccion.Views.CancionesIndexView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ProyectoListasdeReproduccion.Views"
+             
+             xmlns:cc="clr-namespace:ProyectoListasdeReproduccion.Views.CancionesViews"
+             xmlns:fr="clr-namespace:ProyectoListasdeReproduccion.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <fr:CancionViewModel></fr:CancionViewModel>
+    </UserControl.DataContext>
+    <UserControl.Resources>
+        <cc:AgregarCancionView x:Key="AgregarCancion"></cc:AgregarCancionView>
+        <cc:EliminarCancionView x:Key="EliminarCancion"></cc:EliminarCancionView>
+        <cc:CancionesView x:Key="CancionView"></cc:CancionesView>
+    </UserControl.Resources>
+    <Grid>
+        <ContentControl>
+            <ContentControl.Style>
+                <Style TargetType="ContentControl">
+                    <Setter Property="Content" Value="{StaticResource CancionView}"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Operacion}" Value="{x:Static local:Accion.VerCanciones}">
+                            <Setter Property="Content" Value="{StaticResource CancionView}"></Setter>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Operacion}" Value="{x:Static local:Accion.AgregarCanciones}">
+                            <Setter Property="Content" Value="{StaticResource AgregarCancion}"></Setter>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Operacion}" Value="{x:Static local:Accion.EliminarCanciones}">
+                            <Setter Property="Content" Value="{StaticResource EliminarCancion}"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ContentControl.Style>
+        </ContentControl>     
+    </Grid>
+</UserControl>
