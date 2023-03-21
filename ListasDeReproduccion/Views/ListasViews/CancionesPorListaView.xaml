@@ -14,7 +14,7 @@
                 <ColumnDefinition Width=".2*"></ColumnDefinition>
 
             </Grid.ColumnDefinitions>
-            <TextBlock Background="Aqua"  FontSize="30" FontWeight="Bold" Text="{Binding Lista.Nombre}"></TextBlock>
+            <TextBlock Background="Aqua"  FontSize="30" FontWeight="Bold" Text="{Binding Nombre}"></TextBlock>
             <Button Grid.Column="1" Command="{Binding RegresarCommand}" Background="Aqua">
                 <fa:ImageAwesome Icon="Solid_Backward" ></fa:ImageAwesome>
             </Button>
@@ -31,8 +31,12 @@
 
                                 </Grid.ColumnDefinitions>
                                 <StackPanel Grid.Column="0">
-                                    <TextBlock Text="{Binding Titulo}"></TextBlock>
-                                    <TextBlock Text="{Binding Artista}"></TextBlock>
+                                    <WrapPanel>
+                                        <TextBlock Text="{Binding Titulo}" Margin="0,0,10,0"></TextBlock>
+                                        <TextBlock Text="{Binding Artista}"></TextBlock>
+                                    </WrapPanel>
+                                    
+                                    
                                 </StackPanel>
                                 <!--<Button Grid.Column="1" Background="HotPink" CommandParameter="{Binding Id}" Command="{Binding Source={x:Reference vercanciones},Path=DataContext.VerEliminarCancionCommand}">
                                     <fa:ImageAwesome Icon="Solid_FlagUsa" ></fa:ImageAwesome>
