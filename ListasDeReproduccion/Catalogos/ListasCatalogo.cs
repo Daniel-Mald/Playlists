@@ -13,7 +13,7 @@ namespace ProyectoListasdeReproduccion.Catalogos
         ListasdereproduccionContext contenedor = new ListasdereproduccionContext();
         public IEnumerable<Listas> GetListas()
         {
-            return contenedor.Listas.OrderBy(x=>x.Nombre);
+            return contenedor.Listas.Include(x=>x.Canciones).OrderBy(x=>x.Nombre);
         }
         public void Create(Listas l)
         {
@@ -23,6 +23,7 @@ namespace ProyectoListasdeReproduccion.Catalogos
         public void Delete(Listas l)
         {
             contenedor.Database.ExecuteSqlRaw($"call spEliminarLista ({l.Id})");
+            contenedor.SaveChanges();
         }
         public Listas? GetLista(int id)
         {

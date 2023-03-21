@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:ProyectoListasdeReproduccion.ViewModels"
-       
+       Background="Black"
         xmlns:local="clr-namespace:ProyectoListasdeReproduccion.Views"
       xmlns:fa="http://schemas.fontawesome.com/icons/"
         mc:Ignorable="d"
@@ -22,10 +22,10 @@
     </Window.Resources>
     <DockPanel>
         <StackPanel DockPanel.Dock="Left" Background="Black" Width="120">
-            <Button Width="100" Height="100" Margin="10" Background="Red" Command="{Binding NavegarListasCommand}">
-                <fa:ImageAwesome Icon="Solid_ListAlt"></fa:ImageAwesome>
+            <Button Width="100" Height="100" Margin="10" Background="Gray" Command="{Binding NavegarListasCommand}">
+                <fa:ImageAwesome Icon="Solid_ListUl"></fa:ImageAwesome>
             </Button>
-            <Button  Width="100" Height="100" Margin="10" Background="Red" Command="{Binding NavegarCancionesCommand}">
+            <Button  Width="100" Height="100" Margin="10" Background="Gray" Command="{Binding NavegarCancionesCommand}">
                 <fa:ImageAwesome Icon="Solid_Music"></fa:ImageAwesome>
             </Button>
         </StackPanel>

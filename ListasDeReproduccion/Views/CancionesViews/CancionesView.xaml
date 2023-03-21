@@ -15,12 +15,12 @@
                 <ColumnDefinition Width=".1*"></ColumnDefinition>
 
             </Grid.ColumnDefinitions>
-            <Label Background="Aqua" HorizontalContentAlignment="Center" FontSize="30" FontWeight="Bold" VerticalContentAlignment="Center">Lista de canciones</Label>
-            <Button Grid.Column="1" Command="{Binding VerAgregarCancionCommadn}" Background="Aqua">
+            <Label Background="#1DB954" HorizontalContentAlignment="Center" FontSize="30" FontWeight="Bold" VerticalContentAlignment="Center">Lista de canciones</Label>
+            <Button Grid.Column="1" Command="{Binding VerAgregarCancionCommadn}" Background="#1DB954" BorderThickness="0">
                 <fa:ImageAwesome Icon="Solid_Plus" ></fa:ImageAwesome>
             </Button>
         </Grid>
-        <ScrollViewer>
+        <ScrollViewer Margin="10,0,0,0">
             <ItemsControl ItemsSource="{Binding ListaCanciones}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>

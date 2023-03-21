@@ -41,6 +41,7 @@ namespace ProyectoListasdeReproduccion.ViewModels
             RegresarCommand = new RelayCommand(Regresar);
             Operacion = Accion.VerListas;
             CargarListas();
+            OnPropertyChanged();
         }
         public void OnPropertyChanged(string? o = null)
         {
@@ -115,6 +116,7 @@ namespace ProyectoListasdeReproduccion.ViewModels
             {
                 ListaDeListas.Add(item);
             }
+            OnPropertyChanged();
         }
     }
 }
