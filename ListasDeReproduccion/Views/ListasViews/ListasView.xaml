@@ -22,7 +22,7 @@
             <Button Grid.Column="1" Command="{Binding VerRegistrarListaCommand}" Background="Goldenrod">
                 <fa:ImageAwesome Icon="Regular_Angry" ></fa:ImageAwesome>-->
 
-            <Label Background="#1DB954" HorizontalContentAlignment="Center" FontSize="30" FontWeight="Bold" VerticalContentAlignment="Center">Lista de playlist</Label>
+            <Label Background="#1DB954" HorizontalContentAlignment="Center" FontSize="60" FontWeight="Bold" VerticalContentAlignment="Center">Lista de playlist</Label>
             <Button Grid.Column="1" Command="{Binding VerRegistrarListaCommand}" Background="#1DB954" BorderThickness="0">
                 <fa:ImageAwesome Icon="Solid_Plus"></fa:ImageAwesome>
 

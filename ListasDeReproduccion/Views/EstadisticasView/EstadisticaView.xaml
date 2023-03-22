@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <DockPanel>
-        <DataGrid ItemsSource="{Binding listadecyd}" Background="#111117"  GridLinesVisibility="None" Foreground="#4C9753"   AutoGenerateColumns="False" RowBackground="#111117" AlternatingRowBackground="#111117" >
+        <DataGrid ItemsSource="{Binding listadecyd}" Background="#111117"  GridLinesVisibility="None" Foreground="#4C9753" FontSize="20"   AutoGenerateColumns="False" RowBackground="#111117" AlternatingRowBackground="#111117" >
             <DataGrid.Columns >
                 <DataGridTextColumn  Header="Cancion" FontWeight="Bold" Binding="{Binding cancion.Titulo}"></DataGridTextColumn>
                 <DataGridTextColumn  Header="Interprete" FontWeight="Normal" Binding="{Binding cancion.Artista}"></DataGridTextColumn>
