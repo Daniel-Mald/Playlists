@@ -27,15 +27,15 @@
         </DataTemplate>
     </Window.Resources>
     <DockPanel>
-        <StackPanel DockPanel.Dock="Left" Background="Black" Width="120">
-            <Button Width="100" Height="100" Margin="10" Background="Gray" Command="{Binding NavegarListasCommand}">
-                <fa:ImageAwesome Icon="Solid_ListUl"></fa:ImageAwesome>
+        <StackPanel DockPanel.Dock="Left" Background="Black" Width="120" VerticalAlignment="center">
+            <Button Width="60" Height="60" Margin="10 40" Background="black" BorderThickness="0" Command="{Binding NavegarListasCommand}">
+                <fa:ImageAwesome Foreground="gray" Icon="Solid_ListUl"></fa:ImageAwesome>
             </Button>
-            <Button  Width="100" Height="100" Margin="10" Background="Gray" Command="{Binding NavegarCancionesCommand}">
-                <fa:ImageAwesome Icon="Solid_Music"></fa:ImageAwesome>
+            <Button  Width="60" Height="60" Margin="10 40" Background="black" BorderThickness="0" Command="{Binding NavegarCancionesCommand}">
+                <fa:ImageAwesome  Foreground="gray" Icon="Solid_Music"></fa:ImageAwesome>
             </Button>
-            <Button  Width="100" Height="100" Margin="10" Background="Gray" Command="{Binding NavegarEstadisticaCommand}">
-                <fa:ImageAwesome Icon="Solid_Calculator"></fa:ImageAwesome>
+            <Button  Width="60" Height="60" Margin="10 40" Background="black" BorderThickness="0" Command="{Binding NavegarEstadisticaCommand}">
+                <fa:ImageAwesome  Foreground="gray" Icon="Solid_Calculator"></fa:ImageAwesome>
             </Button>
         </StackPanel>
         <Grid Background="Gray">
