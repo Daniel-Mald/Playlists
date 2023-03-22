@@ -38,7 +38,7 @@
                 <fa:ImageAwesome  Foreground="gray" Icon="Solid_Calculator"></fa:ImageAwesome>
             </Button>
         </StackPanel>
-        <Grid Background="Gray">
+        <Grid Background="black">
 
             <ContentControl  Background="LimeGreen" Content="{Binding VMactual}">
                 
