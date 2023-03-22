@@ -1,5 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Command;
-using ListasDeReproduccion.ViewModels;
+using ProyectoListasdeReproduccion.ViewModels;
 using ProyectoListasdeReproduccion.Catalogos;
 using ProyectoListasdeReproduccion.Models;
 using ProyectoListasdeReproduccion.Views;

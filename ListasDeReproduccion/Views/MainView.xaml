@@ -3,7 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:vm="clr-namespace:ProyectoListasdeReproduccion.ViewModels"
+        
+        xmlns:rr="clr-namespace:ProyectoListasdeReproduccion.ViewModels"
        Background="Black"
         xmlns:est="clr-namespace:ListasDeReproduccion.Views.EstadisticasView"
         xmlns:local="clr-namespace:ProyectoListasdeReproduccion.Views"
@@ -11,16 +12,17 @@
         mc:Ignorable="d"
         Title="MainView" Height="750" Width="1200">
     <Window.DataContext>
-        <vm:MainViewModell></vm:MainViewModell>
+        <rr:MainViewModell></rr:MainViewModell>
+       
     </Window.DataContext>
     <Window.Resources>
-        <DataTemplate DataType="{x:Type vm:CancionViewModel}">
+        <DataTemplate DataType="{x:Type rr:CancionViewModel}">
             <local:CancionesIndexView></local:CancionesIndexView>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type vm:ListasViewModel}">
+        <DataTemplate DataType="{x:Type rr:ListasViewModel}">
             <local:ListasIndexView></local:ListasIndexView>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type vm:EstadisticaViewModel}">
+        <DataTemplate DataType="{x:Type rr:EstadisticaViewModel}">
             <est:EstadisticaView></est:EstadisticaView>
         </DataTemplate>
     </Window.Resources>
@@ -31,6 +33,9 @@
             </Button>
             <Button  Width="100" Height="100" Margin="10" Background="Gray" Command="{Binding NavegarCancionesCommand}">
                 <fa:ImageAwesome Icon="Solid_Music"></fa:ImageAwesome>
+            </Button>
+            <Button  Width="100" Height="100" Margin="10" Background="Gray" Command="{Binding NavegarEstadisticaCommand}">
+                <fa:ImageAwesome Icon="Solid_Calculator"></fa:ImageAwesome>
             </Button>
         </StackPanel>
         <Grid Background="Gray">

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ListasDeReproduccion.ViewModels
+namespace ProyectoListasdeReproduccion.ViewModels
 {
     public class EstadisticaViewModel : INotifyPropertyChanged
     {
@@ -32,7 +32,7 @@ namespace ListasDeReproduccion.ViewModels
 
                 
             }
-            listadecyd.OrderBy(x => x.Sec);
+            listadecyd = listadecyd.OrderByDescending(x => x.Sec).ToList() ;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(null));
         }
         public int Convertir(string tiempo)
@@ -41,7 +41,7 @@ namespace ListasDeReproduccion.ViewModels
             string[] a = tiempo.Split(':');
             if(a.Length == 2)
             {
-                segundos += int.Parse(a[0]);
+                segundos += int.Parse(a[0])*60;
                 segundos += int.Parse(a[1]);
             }
             return segundos;
