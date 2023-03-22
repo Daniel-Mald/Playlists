@@ -21,7 +21,7 @@ namespace ProyectoListasdeReproduccion.ViewModels
        public  ListasCatalogo catalogolista = new();
         public event PropertyChangedEventHandler? PropertyChanged;
         public string Error { get; set; } = "";
-        public Listas ListaID { get; set; }
+        public Listas? ListaID { get; set; }
         public Accion Operacion { get; set; }
         public Canciones? Cancion { get; set; } 
         public ObservableCollection<Canciones> ListaCanciones { get; set; } = new();
@@ -46,7 +46,7 @@ namespace ProyectoListasdeReproduccion.ViewModels
         public void LlenarListaCanciones()
         {
             ListaCanciones.Clear();
-            foreach (var item in catalogo.GetCanciones())
+            foreach (var item in catalogo.GetCanciones())               
             {
                 ListaCanciones.Add(item);
             }
@@ -107,6 +107,7 @@ namespace ProyectoListasdeReproduccion.ViewModels
         public void VerEliminarCancion(int id)
         {
             Cancion = catalogo.GetCancion(id);
+            
             Operacion = Accion.EliminarCanciones;
             OnPropertyChanged();
             
@@ -117,6 +118,7 @@ namespace ProyectoListasdeReproduccion.ViewModels
             {
                 catalogo.Delete(Cancion);
                 Regresar();
+                LlenarListaCanciones();
             }
             
         }

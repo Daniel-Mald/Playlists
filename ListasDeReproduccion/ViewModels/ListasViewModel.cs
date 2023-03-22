@@ -73,7 +73,7 @@ namespace ProyectoListasdeReproduccion.ViewModels
                 if (catalogo.validar(Lista , out List<string> errores))
                 {
                     catalogo.Create(Lista);
-                    
+                    CargarListas();
                     Regresar();
                 }
                 else
@@ -86,7 +86,7 @@ namespace ProyectoListasdeReproduccion.ViewModels
                     }
                     OnPropertyChanged();
                 }
-                CargarListas();
+                
             }
             
         }
@@ -101,6 +101,7 @@ namespace ProyectoListasdeReproduccion.ViewModels
             if(Lista != null)
             {
                 catalogo.Delete(Lista);
+                CargarListas();
                 Regresar();
             }
         }

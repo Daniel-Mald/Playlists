@@ -5,10 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:ProyectoListasdeReproduccion.ViewModels"
        Background="Black"
+        xmlns:est="clr-namespace:ListasDeReproduccion.Views.EstadisticasView"
         xmlns:local="clr-namespace:ProyectoListasdeReproduccion.Views"
       xmlns:fa="http://schemas.fontawesome.com/icons/"
         mc:Ignorable="d"
-        Title="MainView" Height="450" Width="800">
+        Title="MainView" Height="750" Width="1200">
     <Window.DataContext>
         <vm:MainViewModell></vm:MainViewModell>
     </Window.DataContext>
@@ -18,6 +19,9 @@
         </DataTemplate>
         <DataTemplate DataType="{x:Type vm:ListasViewModel}">
             <local:ListasIndexView></local:ListasIndexView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:EstadisticaViewModel}">
+            <est:EstadisticaView></est:EstadisticaView>
         </DataTemplate>
     </Window.Resources>
     <DockPanel>

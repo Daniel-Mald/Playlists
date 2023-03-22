@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Command;
+using ListasDeReproduccion.ViewModels;
 using ProyectoListasdeReproduccion.Catalogos;
 using ProyectoListasdeReproduccion.Models;
 using ProyectoListasdeReproduccion.Views;
@@ -18,6 +19,7 @@ namespace ProyectoListasdeReproduccion.ViewModels
     {
         CancionViewModel CancionVM = new CancionViewModel();
         ListasViewModel ListasVM = new ListasViewModel();
+        EstadisticaViewModel EstadisticaVM = new EstadisticaViewModel();
         private object vmactual;
 
         public event PropertyChangedEventHandler? PropertyChanged;
@@ -29,20 +31,31 @@ namespace ProyectoListasdeReproduccion.ViewModels
         }
         public ICommand NavegarCancionesCommand { get; set; }
         public ICommand NavegarListasCommand { get; set; }
+        public ICommand NavegarEstadisticaCommand { get; set; }
         public MainViewModell()
         {
             NavegarCancionesCommand = new RelayCommand(NavegarCanciones);
             NavegarListasCommand = new RelayCommand(NavegarListas);
+            NavegarEstadisticaCommand = new RelayCommand(NavegarEstadistica);
+            
             vmactual = ListasVM;
 
         }
+        public void NavegarEstadistica()
+        {
+            EstadisticaVM = new();
+            VMactual = EstadisticaVM;
+            OnPropertyChanged();
+        }
         public void NavegarCanciones()
         {
+            CancionVM = new();
             vmactual = CancionVM;
             OnPropertyChanged();
         }
         public void NavegarListas()
         {
+
             ListasVM.CargarListas();
             vmactual = ListasVM;
             OnPropertyChanged();
