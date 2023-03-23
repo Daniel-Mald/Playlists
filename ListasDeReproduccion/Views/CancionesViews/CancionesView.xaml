@@ -34,9 +34,9 @@
 
                                         </Grid.ColumnDefinitions>
                                         <StackPanel Grid.Column="0">
-                                            <TextBlock Foreground="White" FontSize="15" FontWeight="Normal" Text="{Binding Titulo}"></TextBlock>
-                                            <TextBlock Foreground="Gray"     FontSize="15" Text="{Binding Artista}"></TextBlock>
-                                        </StackPanel>
+                                    <TextBlock Text="{Binding Titulo}" Margin="0,0,10,0" Foreground="White" FontSize="23"></TextBlock>
+                                    <TextBlock Foreground="Gray" FontSize="15" Margin="10,0,0,10">•<Run Text="{Binding Artista}" ></Run></TextBlock>
+                                </StackPanel>
                                         <Button Grid.Column="1" Width="50" Background="Transparent" BorderBrush="Transparent" CommandParameter="{Binding Id}" Command="{Binding Source={x:Reference vercanciones},Path=DataContext.VerEliminarCancionCommand}">
                                             <fa:ImageAwesome Foreground="Gray" Margin="5" Icon="Solid_Trash" ></fa:ImageAwesome>
                                         </Button>
